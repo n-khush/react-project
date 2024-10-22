@@ -1,4 +1,6 @@
-const child1 = React.createElement("h1",{id:"child11"},"This is first of first children")
+import React from "react";
+import ReactDOM from "react-dom/client";
+const child1 = React.createElement("h1",{id:"child11"},"This is first of first children updated")
 const child2 = React.createElement("h2",{id:"child12"},"This is second  of first children")
 const child3 = React.createElement("h1",{id:"child21"},"This is first of second children")
 const child4 = React.createElement("h2",{id:"child22"},"This is second of second children")
