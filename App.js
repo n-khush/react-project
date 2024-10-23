@@ -1,11 +1,48 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const child1 = React.createElement("h1",{id:"child11"},"This is first of first children updated")
-const child2 = React.createElement("h2",{id:"child12"},"This is second  of first children")
-const child3 = React.createElement("h1",{id:"child21"},"This is first of second children")
-const child4 = React.createElement("h2",{id:"child22"},"This is second of second children")
 
-const parent = React.createElement("div",{id:"parent"},[React.createElement("div",{id:"child1"},[child1,child2]),React.createElement("div",{id:"child1"},[child3,child4])])
-const heading = React.createElement("h1",{id:"heading"},"Hello World from React!");
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(parent);
+const heading = React.createElement("h1", { id: "heading" }, "Namaste React!!");
+
+/**
+ * Header
+ * - Logo
+ * - Nav
+ * Body
+ * - Search
+ * = Restaurant Container
+ *      - Restaurant Card
+ * Footer
+ * -Copyright
+ * -Links
+ * -Address
+ * -Contact
+ * 
+ */
+
+
+
+
+//React element
+const Title = () => (
+   <h1 id="heading" className="head">
+    Namaste react using JSX!
+  </h1>
+);
+const title = <h2 className="headin2">This heading 2</h2>
+const counter = (x)=>{
+     x= x ? x :0;
+    return ++x;
+};
+
+//React component
+//React functional component
+const HeadingComponent = () => (
+  <div id="container">
+    <Title />
+    {title}
+    {counter(2)}
+    <h1>Namaste React functional component</h1>
+  </div>
+);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />);
