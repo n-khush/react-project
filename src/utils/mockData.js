@@ -1,47 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- * Header
- * - Logo
- * - Nav
- * Body
- * - Search
- * = Restaurant Container
- *      - Restaurant Card
- *          -Img
- *          -Description,name,cuisines,delivery time
- * Footer
- * -Copyright
- * -LinksLinks
- * -Address
- * -Contact
- *
- */
-const styleCard = {
-  backgroundColor: "#f0f0f0",
-};
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://plus.unsplash.com/premium_photo-1723491285855-f1035c4c703c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const resList =[
+const resListSwiggy =[
     {
         "info": {
             "id": "195429",
@@ -769,49 +726,122 @@ const resList =[
         "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
     }
 ]
-const RestaurantCard = (props) => {
-  const { name,avgRating,cuisines,costForTwo,sla,cloudinaryImageId } = props?.resData?.info;
-  return (
-    <div className="res-card" style={styleCard}>
-      <img
-        className="res-logo"
-        alt="res-logo"
-        src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId}
-      />
-      <h3> {name}</h3>
-      <h4> {cuisines.join(",")}</h4>
-      <h4> {avgRating}⭐️</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{sla.deliveryTime} minutes</h4>
-    </div>
-  );
-};
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search"> Search </div>
-      <div className="res-container">
-        {
-            resList.map(restaurant => <RestaurantCard key={restaurant.info.id} resData={restaurant} />)
-        }
-      </div>
-    </div>
-  );
-};
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-  //    return (
-  //     <>
-  //     <Header/>
-  //     <Body/>
-  //     </>
-  //     )
-};
-const root = ReactDOM.createRoot(document.getElementById("root"));
+let resList =[
+    {
+        "name": "Sanju Ka Dhaba",
+        "avgRating": 4.5,
+        "costForTwo": "₹250 for two",
+        "deliveryTime": 50,
+        "id": "195429",
+        "cuisines": [
+            "North Indian",
+            "South Indian",
+            "Chinese"
+        ],
+        "cloudinaryImageId": "hjao7sorzggaeqito6au"
+    },
+    {
+        "name": "Adil Hotel",
+        "avgRating": 4.3,
+        "costForTwo": "₹150 for two",
+        "deliveryTime": 40,
+        "id": "234875",
+        "cuisines": [
+            "North Indian",
+            "Biryani",
+            "Tandoor"
+        ],
+        "cloudinaryImageId": "gp1ityra6utvzqn6ghnv"
+    },
+    {
+        "name": "Shree Naivedyam",
+        "avgRating": 4.2,
+        "costForTwo": "₹300 for two",
+        "deliveryTime": 59,
+        "id": "774546",
+        "cuisines": [
+            "North Indian",
+            "Chinese",
+            "South Indian",
+            "Pizzas",
+            "Beverages"
+        ],
+        "cloudinaryImageId": "2274f59cb8efcfab1f446b195bcbda3b"
+    },
+    {
+        "name": "Hotel Sai Nath & Sai Restaurant",
+        "avgRating": 4.2,
+        "costForTwo": "₹200 for two",
+        "deliveryTime": 49,
+        "id": "151649",
+        "cuisines": [
+            "North Indian",
+            "South Indian",
+            "Chinese",
+            "Beverages",
+            "Fast Food",
+            "Desserts"
+        ],
+        "cloudinaryImageId": "vkhcohhmqfczycw9vsar"
+    },
+    {
+        "name": "Jai Ganesh Bhojnalaya",
+        "avgRating": 3.9,
+        "costForTwo": "₹200 for two",
+        "deliveryTime": 45,
+        "id": "618037",
+        "cuisines": [
+            "North Indian",
+            "South Indian",
+            "Indian",
+            "Chinese"
+        ],
+        "cloudinaryImageId": "yzgqriufpzmloogcn2vl"
+    },
+    {
+        "name": "Urban Cafe",
+        "avgRating": 3.4,
+        "costForTwo": "₹300 for two",
+        "deliveryTime": 59,
+        "id": "912754",
+        "cuisines": [
+            "Snacks",
+            "Pizzas",
+            "Pastas",
+            "Fast Food",
+            "Burgers",
+            "Cafe"
+        ],
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/21/dbe91f1f-b400-4f4b-a78d-c6b99bdc61c5_912754.JPG"
+    },
+    {
+        "name": "Apni Rasoi Family Dhaba",
+        "avgRating": 3.9,
+        "costForTwo": "₹250 for two",
+        "deliveryTime": 48,
+        "id": "213358",
+        "cuisines": [
+            "North Indian",
+            "Indian",
+            "South Indian",
+            "Chinese"
+        ],
+        "cloudinaryImageId": "sidigb8zqjfrfpkrtqgl"
+    },
+    {
+        "name": "Bakery World",
+        "avgRating": 4.2,
+        "costForTwo": "₹250 for two",
+        "deliveryTime": 47,
+        "id": "151518",
+        "cuisines": [
+            "Bakery",
+            "Ice Cream",
+            "Snacks",
+            "Beverages"
+        ],
+        "cloudinaryImageId": "mt2aggiscfl3yviatwng"
+    }
+]
 
-root.render(<AppLayout />);
+export default resList
